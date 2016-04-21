@@ -1,0 +1,58 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-weight: bold;
+}
+.box {
+    width: 35%;
+    height: 600px;
+    background-color: rgb(73, 172, 71);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+button {
+    width: 95%;
+    margin: auto;
+    border: none;
+    border-radius: 4px;
+    height: 60px;
+}
+.width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btnPanier {
+    margin-bottom: 10px;
+    background-color: rgb(38, 83, 37);
+    color: white;
+    transition: 0.2s all;
+
+}
+.btnPanier:hover {
+    background-color: rgb(32, 69, 32);
+    transition: 0.2s all;
+}
+.buttonOn {
+    background-color: rgb(117, 255, 113);
+}
+.buttonOff {
+    background-color: rgb(65, 149, 64);
+}
+
+.basket {
+  margin-top: 10px;
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+
+.basket i{
+  margin: 0px 10px 0px 10px;
+}

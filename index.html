@@ -1,22 +1,44 @@
 <!DOCTYPE html>
 <html lang="fr" ng-app="appNote">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Application Note</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.min.css">
 	<script src="bower_components/angular/angular.min.js"></script>
 </head>
-<body id="body" ng-controller="noteCtrl">
-	<h1> Note: </h1>
-	<textarea ng-model="text" rows="7" cols="70"></textarea>
-	<br>
-	<button class="btn btn-primary" ng-click="save()"> Enregistrer </button>
-	<button class="btn btn-primary" ng-click="erase()" ng-model="effacer"> Effacer </button>
 
-	<p> Nombre de caractères restant: {{ 100 - text.length }} </p>
-	<p class="alert" ng-class="{'alert-warning': status===1, 'alert-danger': status===2, 'alert-success': status===3}" ng-model="memory"> {{memory}} </p>
+<body id="body" ng-controller="noteCtrl">
+
+	<div class="box">
+		<div class="basket">
+			<p ng-model="numPanier"> {{numPanier}} </p>
+		<i class="fa fa-shopping-basket" aria-hidden="true"></i>
+		<p ng-model="numPanier"> {{prixPanier | currency}} </p>
+	</div>
+
+		<h1>Services</h1>
+
+		<div class="element">
+			<p> <strong>{{elem}}</strong> éléments séléctionnés.</p>
+		</div>
+
+		<div ng-repeat="product in products" class="width">
+			<button type="button" name="button" ng-click="addPrice()" ng-class="{'buttonOn': product.onoff, 'buttonOff': product.onoff == false}"> {{product.name}}
+				<br><span>{{product.price | currency}}</span></button>
+		</div>
+
+		<hr>
+
+		<p>Total: {{total | currency}}</p>
+
+<button type="button" name="button" ng-click="addPanier()" class="btnPanier">Ajouter au panier !</button>
+
+	</div>
 
 	<script src="script.js"></script>
 </body>
+
 </html>
